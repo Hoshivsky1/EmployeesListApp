@@ -13,9 +13,10 @@ class App extends Component {
         super(props);
         this.state = {
             data: [
-                {name: 'Maryan I.' , salary: 1500, increase: false, like: false, id: 1},
-                {name: 'Miha H.' , salary: 1900, increase: false, like: false, id: 2},
-                {name: 'Maxim H.' , salary: 2900, increase: false, like: false, id: 3},
+                {name: 'Maryan I.' , salary: 1500, id: 1},
+                {name: 'Miha H.' , salary: 1900, id: 2},
+                {name: 'Maxim H.' , salary: 2900, id: 3},
+                {name: 'Lubomir H.', salary: 1500, id: 4},
             ]
         }
         this.maxId = 4;
@@ -23,7 +24,7 @@ class App extends Component {
 
     deleteItem = (id) => {
         this.setState(({data}) => {
-            //! 1 Cпосію ===========================================
+            //! 1 Cпосіб ===========================================
             // const index = data.findIndex(elem => elem.id === id)
             // const before = data.slice(0, index);
             // const after = data.slice(index + 1);
