@@ -8,6 +8,7 @@ class EmployeesAddForm extends Component {
         this.state = {
             name: '',
             salary: '',
+            styles: {border: `1px solid #CED4DA`},
             holderName: 'Як його звати?',
             holderSalary: "З/П в $?"
         }
@@ -32,6 +33,10 @@ class EmployeesAddForm extends Component {
             this.setState({
                 name: '',
                 salary: '',
+                styles: {
+                    border: `2px solid red`,
+                    boxShadow: `0px 0px 3px red`,
+                },
                 holderName: 'Мінімум 3 символи ?',
                 holderSalary: 'Зарплата не може дорівнювати 0'
             })
@@ -40,6 +45,7 @@ class EmployeesAddForm extends Component {
             this.setState({
                 name: '',
                 salary: '',
+                styles: {border: `1px solid #CED4DA`},
                 holderName: 'Як його звати ?',
                 holderSalary: "З/П в $?"
             })
@@ -47,7 +53,7 @@ class EmployeesAddForm extends Component {
     }
 
     render() {
-        const {name, salary, holderName, holderSalary} = this.state;
+        const {name, salary, holderName, holderSalary, styles} = this.state;
         
         return (
             <div className="app-add-form">
@@ -59,13 +65,15 @@ class EmployeesAddForm extends Component {
                         placeholder={holderName}
                         name="name" 
                         value={name}
-                        onChange={this.onValueChange}/>
+                        onChange={this.onValueChange}
+                        style={styles}/>
                     <input type="number"
                         className="form-control new-post-label"
                         placeholder={holderSalary}
                         name="salary"
                         value={salary} 
-                        onChange={this.onValueChange}/>
+                        onChange={this.onValueChange}
+                        style={styles}/>
     
                     <button type="submit"
                             className="btn btn-outline-light"
