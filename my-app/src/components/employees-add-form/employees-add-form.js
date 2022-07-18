@@ -22,14 +22,7 @@ class EmployeesAddForm extends Component {
 
     onSubmit = (e) => {
         e.preventDefault();
-        const root = this.state.name === '' && this.state.salary.length >= 1,
-              root1 = this.state.name.length < 3 && this.state.salary === '',
-              root2 = this.state.name.length < 3 && this.state.salary === '0',
-              root3 = this.state.name === '' && this.state.salary === '0',
-              root4 = this.state.salary === '' && this.state.name.length >= 3,
-              root5 = this.state.name.length >= 3 && this.state.salary === '0';
-
-        if(root || root1 || root2 || root3 || root4 || root5){
+        if(this.state.name.length < 3 || !this.state.salary){
             this.setState({
                 name: '',
                 salary: '',
